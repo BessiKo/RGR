@@ -1,0 +1,70 @@
+# .clang-tidy
+
+Checks: >
+  -*,
+  cppcoreguidelines*,
+  modernize*,
+  readability*,
+  performance*,
+  bugprone*,
+  clang-analyzer*,
+  google-readability-braces-around-statements,
+  google-runtime-int
+
+CheckOptions:
+  # Именование классов и структур
+  - key: readability-identifier-naming.ClassCase
+    value: PascalCase
+  - key: readability-identifier-naming.StructCase
+    value: PascalCase
+
+  # Именование функций
+  - key: readability-identifier-naming.FunctionCase
+    value: CamelCase
+
+  # Именование переменных
+  - key: readability-identifier-naming.VariableCase
+    value: camelCase
+  - key: readability-identifier-naming.ParameterCase
+    value: camelCase
+  - key: readability-identifier-naming.LocalVariableCase
+    value: camelCase
+
+  # Константы
+  - key: readability-identifier-naming.ConstVariableCase
+    value: CamelCase
+  - key: readability-identifier-naming.ConstVariablePrefix
+    value: 'k'
+
+  # Приватные поля классов
+  - key: readability-identifier-naming.PrivateMemberCase
+    value: camelCase
+  - key: readability-identifier-naming.PrivateMemberSuffix
+    value: '_'
+  - key: readability-identifier-naming.PublicMemberCase
+    value: camelCase
+
+  # Методы классов
+  - key: readability-identifier-naming.MethodCase
+    value: CamelCase
+
+  # Пространства имён
+  - key: readability-identifier-naming.NamespaceCase
+    value: lower_case
+
+  # Макросы
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+
+  # Заголовочные файлы
+  - key: readability-identifier-naming.HeaderFileExtension
+    value: .h
+  - key: readability-identifier-naming.SourceFileExtension
+    value: .cpp
+
+  # Когнитивная сложность
+  - key: readability-function-cognitive-complexity.Threshold
+    value: '15'
+
+HeaderFilterRegex: '.*'
+FormatStyle: file

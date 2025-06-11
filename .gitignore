@@ -1,0 +1,10 @@
+/build/
+*.o
+*.so
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+__pycache__
+*.log
+*.tmp
